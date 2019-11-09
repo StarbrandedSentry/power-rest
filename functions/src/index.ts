@@ -21,6 +21,8 @@ main.use(bodyParser.urlencoded({ extended: false }));
 // a parameter
 export const powerrest = functions.https.onRequest(main);
 
+
+
 //TODO rewards
 app.post('/rewards', async (req, res) => {
   try {
@@ -36,12 +38,24 @@ app.post('/rewards', async (req, res) => {
     res.status(400).send(`Unable to resolve request.`)
   }
 })
+app.get('/rewards/:rewardId', (req, res) => { //TODO
+  firebaseHelper.firestore
+    .getDocument(db, 'rewards', req.params.rewardId) //TODO
+    .then((doc: any) => res.status(200).send(doc))
+    .catch((error: any) => res.status(400).send(`Cannot get reward: ${error}`));
+})
 app.get('/rewards', (req, res) => {
   firebaseHelper.firestore
     .backup(db, 'rewards')
     .then((data: any) => res.status(200).send(data))
     .catch((error: any) => res.status(400).send(`Cannot get contacts: ${error}`));
 })
+app.patch('/rewards/:rewardId', async (req, res) => {
+  const updatedDoc = await firebaseHelper.firestore
+    .updateDocument(db, 'rewards', req.params.rewardId, req.body); //TODO
+  res.status(204).send(`Update a new contact: ${updatedDoc}`);
+})
+
 
 //TODO accounts
 app.post('/accounts', async (req, res) => {
@@ -62,9 +76,65 @@ app.post('/accounts', async (req, res) => {
     res.status(400).send(`Unable to resolve request.`)
   }
 })
-// app.get('/accounts', (req, res) => { //TODO
+app.get('/accounts/:accountId', (req, res) => { //TODO
+  firebaseHelper.firestore
+    .getDocument(db, 'accounts', req.params.accountId) //TODO
+    .then((doc: any) => res.status(200).send(doc))
+    .catch((error: any) => res.status(400).send(`Cannot get accounts: ${error}`));
+})
+app.get('/accounts', (req, res) => { //TODO
+  firebaseHelper.firestore
+    .backup(db, 'accounts') //TODO
+    .then((data: any) => res.status(200).send(data))
+    .catch((error: any) => res.status(400).send(`Cannot get contacts: ${error}`));
+})
+app.patch('/accounts/:accountId', async (req, res) => {
+  const updatedDoc = await firebaseHelper.firestore
+    .updateDocument(db, 'accounts', req.params.accountId, req.body); //TODO
+  res.status(204).send(`Update a new contact: ${updatedDoc}`);
+})
+
+//TODO products
+app.get('/products', (req, res) => { //TODO
+  firebaseHelper.firestore
+    .backup(db, 'products') //TODO
+    .then((data: any) => res.status(200).send(data))
+    .catch((error: any) => res.status(400).send(`Cannot get products: ${error}`));
+})
+
+
+// app.get('/products', (req, res) => { //TODO
 //   firebaseHelper.firestore
-//     .backup(db, 'accounts') //TODO
+//     .backup(db, 'products') //TODO
 //     .then((data: any) => res.status(200).send(data))
-//     .catch((error: any) => res.status(400).send(`Cannot get contacts: ${error}`));
+//     .catch((error: any) => res.status(400).send(`Cannot get products: ${error}`));
 // })
+
+
+
+app.post('/products', async (req, res) => {
+  try {
+    const contact: any = { //TODO
+      age: {
+        max: req.body.age['max'],
+        min: req.body.age['min']
+      },
+      coverage: req.body['coverage'],
+      description: req.body['description'],
+      title: req.body['title'],
+    }
+
+    const newDoc = await firebaseHelper.firestore
+      .createNewDocument(db, 'products', contact); //TODO
+
+    res.status(201).send(`Created a new product: ${newDoc.id}`); //TODO
+  } catch (error) {
+    res.status(400).send(`Unable to resolve request.`)
+  }
+})
+
+app.patch('/products/:productId', async (req, res) => {
+  const updatedDoc = await firebaseHelper.firestore
+    .updateDocument(db, 'products', req.params.productId, req.body); //TODO
+  res.status(204).send(`Update a new products: ${updatedDoc}`);
+})
