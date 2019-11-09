@@ -1,21 +1,9 @@
+<mat-card>
+    <h1>API</h1>
+</mat-card>
 
 <div class="sidebar">
-    <mat-card class="card">
-        <p>Accounts</p>
+    <mat-card class="card" *ngFor="let item of items"  >
+        <p>{{item.subject}}</p>
      </mat-card>
-    <mat-card class="card">
-        <p>PHILAM LIFE PRODUCTS</p>
-    </mat-card>
-    <mat-card class="card">
-       <p>PHILAM LIFE Vitality</p>
-    </mat-card> 
-    <mat-card class="card">
-       <p>Reward</p>
-    </mat-card> 
-    <mat-card class="card">
-       <p>Payment</p>
-    </mat-card> 
-    <mat-card class="card">
-       <p>Research Products</p>
-    </mat-card> 
 </div>
