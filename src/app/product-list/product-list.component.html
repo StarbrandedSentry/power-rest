@@ -1,12 +1,37 @@
-<mat-card class="header">
+
+
+<mat-card>
     <img src="./../../assets/images/logos.png" alt="" />
 </mat-card>
 
-<div class="card" >
-    <mat-card class="api" *ngFor="let p of appPages" [style.background]="'url(' +p.url +')'">
-        <div class="title" >
-            <p>{{p.title}}</p>
+<div class="sidebar">
+    <div id="box" *ngFor="let p of appPages">
+            <p id="title">{{p.title}}</p>
+        <div class="image" >
+            <img src={{p.url}}>
         </div>
-    </mat-card>
-</div>
+        
 
+        <div class="text">
+            
+            <div class="desc">
+                <span id="title"><h1>{{p.title}}</h1></span>
+            </div>
+            <div class="btns">
+                <span>
+                    <button mat-button>
+                        <i class="material-icons">
+                            info
+                        </i>
+                    </button>
+                    <button mat-button>
+                        <i class="material-icons">
+                            wifi
+                        </i>
+                    </button>
+                </span>
+            </div>
+           
+        </div>
+    </div>
+</div>
