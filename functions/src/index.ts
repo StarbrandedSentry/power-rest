@@ -27,7 +27,9 @@ export const powerrest = functions.https.onRequest(main);
 app.post('/rewards', async (req, res) => {
   try {
     const contact: any = {
-      name: req.body['name']
+      company_name: req.body['company_name'],
+      description: req.body['description'],
+      need_to_know: req.body['need_to_know'],
     }
 
     const newDoc = await firebaseHelper.firestore
@@ -103,15 +105,6 @@ app.get('/products', (req, res) => { //TODO
 })
 
 
-// app.get('/products', (req, res) => { //TODO
-//   firebaseHelper.firestore
-//     .backup(db, 'products') //TODO
-//     .then((data: any) => res.status(200).send(data))
-//     .catch((error: any) => res.status(400).send(`Cannot get products: ${error}`));
-// })
-
-
-
 app.post('/products', async (req, res) => {
   try {
     const contact: any = { //TODO
@@ -138,3 +131,5 @@ app.patch('/products/:productId', async (req, res) => {
     .updateDocument(db, 'products', req.params.productId, req.body); //TODO
   res.status(204).send(`Update a new products: ${updatedDoc}`);
 })
+
+//TODO payment
