@@ -1,0 +1,28 @@
+mat-card {
+    display: flex;
+    align-items: center;
+    background-color: rgb(250, 74, 68);
+    margin-bottom: 5em;
+    height: 20vh;
+}
+
+.sidebar
+{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 10em;
+}
+.card
+{ 
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    background: url('./../../assets/images/accounts.jpg');
+    color: #fff;
+    border-radius: 10px;
+    margin-left: 25px;
+    width: 23vw;
+    height: 35vh;
+    margin-bottom: 20px;
+}
