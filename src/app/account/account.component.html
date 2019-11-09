@@ -1,7 +1,37 @@
 <div class="body">
-  <select>
-    <option *ngFor="let acc of accounts | async">
-      fwaf
-    </option>
-  </select>
+<mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Patch
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+  
+      <mat-form-field>
+        <input matInput placeholder="First name">
+      </mat-form-field>
+  
+      <mat-form-field>
+        <input matInput placeholder="Age">
+      </mat-form-field>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Get
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <p>I'm visible because I am open</p>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Post
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <p>I'm visible because I am open</p>
+    </mat-expansion-panel>
+  </mat-accordion>
 </div>
