@@ -1,15 +1,21 @@
-.card
+.sidebar
 {
-   align-content: center;
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.card
+{ 
+    display:flex;
+    align-items: center;
     background-color:aquamarine;
     border-radius: 10px;
     margin-left: 25px;
     width: 23vw;
     height: 35vh;
+    margin-bottom: 20px;
 }
 p
 {
-    text-align: center;
-
+  
 }
