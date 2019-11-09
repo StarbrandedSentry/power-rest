@@ -169,11 +169,16 @@
     display: flex;
     flex-direction: row;
     button {
-        width: 1em;
+        background-color: transparent;
+        width: 0em;
         height: 4em;
         border-radius: 40px;
         margin-left: 2em;
         margin-top: 3em;
+        padding: 0;
+        i{
+            font-size: 3em;
+        }
     }
     
 }
