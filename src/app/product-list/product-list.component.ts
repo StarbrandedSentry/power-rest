@@ -11,12 +11,14 @@ export class ProductListComponent implements OnInit {
     {
       title: 'Accounts',
       url: './../../assets/images/accounts.png',
+      info: '/account-info',
       redirect: '/account'
     },
 
     {
       title: 'PhilAm Life Products',
       url: './../../assets/images/products.jpg',
+      info: '/product-info'
     },
 
     {
@@ -25,7 +27,8 @@ export class ProductListComponent implements OnInit {
     },
     {
       title: 'Reward',
-      url: './../../assets/images/rewards.png'
+      url: './../../assets/images/rewards.png',
+      info: '/reward-info'
     }
     ,
     {
