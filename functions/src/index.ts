@@ -107,14 +107,14 @@ app.get('/products', (req, res) => { //TODO
 
 app.post('/products', async (req, res) => {
   try {
-    const contact: any = { //TODO
+    const contact = { //TODO
       age: {
         max: req.body.age['max'],
         min: req.body.age['min']
       },
       coverage: req.body['coverage'],
       description: req.body['description'],
-      title: req.body['title'],
+      title: req.body['title']
     }
 
     const newDoc = await firebaseHelper.firestore

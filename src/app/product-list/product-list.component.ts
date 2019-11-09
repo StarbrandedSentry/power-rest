@@ -10,14 +10,15 @@ export class ProductListComponent implements OnInit {
   public appPages = [
     {
       title: 'Accounts',
-      url: './../../assets/images/accounts.png'
+      url: './../../assets/images/accounts.png',
+      redirect: '/account'
     },
 
     {
       title: 'PhilAm Life Products',
       url: './../../assets/images/products.jpg',
     },
-  
+
     {
       title: 'PhilAm Life Vitality',
       url: './../../assets/images/vitality.jpg'
