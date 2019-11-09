@@ -1,9 +1,25 @@
 <mat-card>
-    <h1>API</h1>
+    <img src="./../../assets/images/logos.png" alt="" />
 </mat-card>
 
 <div class="sidebar">
-    <mat-card class="card" *ngFor="let item of items"  >
-        <p>{{item.subject}}</p>
-     </mat-card>
+    <div id="box" *ngFor="let p of appPages">
+            <p id="title">{{p.title}}</p>
+        <div class="image" >
+            <img src={{p.url}}>
+            
+        </div>
+
+        <div class="text">
+            
+            <div class="desc">
+                <span><h1>{{p.title}}</h1></span>
+            </div>
+            <div class="btns">
+                <span><button mat-raised-button >asd</button>
+                <button mat-raised-button >asd</button></span>
+            </div>
+           
+        </div>
+    </div>
 </div>
