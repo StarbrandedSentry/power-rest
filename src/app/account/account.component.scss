@@ -1,0 +1,28 @@
+.body {
+    position: absolute;
+    right:-13em;
+    width: 130vw;
+}
+
+mat-expansion-panel {
+    margin-bottom: 10px;
+
+    img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    .images {
+        height: 430px;
+        width: 1110px;
+    }
+}
+
+mat-expansion-panel-header {
+    background-color:#ce1515 !important; 
+}
+
+mat-panel-title, mat-panel-description {
+    color:white; 
+    font-weight: bold;
+}
