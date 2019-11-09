@@ -1,28 +1,47 @@
-mat-card {
+.card {
     display: flex;
-    align-items: center;
-    background-color: rgb(250, 74, 68);
-    margin-bottom: 5em;
-    height: 20vh;
-}
-
-.sidebar
-{
-    display: flex;
+    flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
-    margin-bottom: 10em;
+    width: 100vw;
+    background-color: #dbcfd2;
 }
-.card
-{ 
-    display:flex;
-    align-items: center;
+
+.header {
+    display: flex;
     justify-content: center;
-    background: url('./../../assets/images/accounts.jpg');
-    color: #fff;
-    border-radius: 10px;
-    margin-left: 25px;
-    width: 23vw;
-    height: 35vh;
-    margin-bottom: 20px;
+    background-color: #eb2250;
+    
+}
+mat-card {
+    background-color: #eb2250;
+}
+.api {
+    display: flex;
+    width:25%;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    margin: 3% 2%;
+    height: 30vh;
+    background-color: #eb2250;
+
+    img {
+
+        background-size: cover;
+    }
+
+    p {
+        font-weight: bold;
+        font-size: 1em;
+        padding: 0.5em;
+    }
+
+   
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 }
