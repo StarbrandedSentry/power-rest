@@ -40,8 +40,11 @@
     </div>
   </div>
 
-  <div class="message">
+  <div class="message" *ngIf="message">
     <span>{{message}}</span>
+    <i class="material-icons" (click)="removeMessage()">
+      close
+    </i>
   </div>
 
   <button (click)="update()">update</button>

@@ -36,7 +36,7 @@ export class AccountComponent implements OnInit {
   contactNumber: string = '';
   totalPremium: number = 0;
   //TODO message
-  message: string = 'TRIAL';
+  message: string = '';
   constructor(private http: HttpClient, private af: AngularFirestore) { }
 
   ngOnInit() {
@@ -84,6 +84,10 @@ export class AccountComponent implements OnInit {
       console.log(error);
     })
       ;
+  }
+
+  removeMessage() {
+    this.message = '';
   }
 
 }

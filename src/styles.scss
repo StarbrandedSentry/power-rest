@@ -110,3 +110,41 @@ button {
     transform: scale(0.98);
   }
 }
+
+.message {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  width: 100%;
+  color: #ffffff;
+  background-color: #009E18;
+  box-sizing: border-box;
+
+  .material-icons {
+    color: #ffffff;
+    margin-left: auto;
+    cursor: pointer;
+    transition: transform ease-in 100ms;
+    outline: none;
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently*/
+
+    &:hover {
+      transform: scale(1.25);
+    }
+
+    &:active {
+      transform: scale(1);
+    }
+  }
+}
