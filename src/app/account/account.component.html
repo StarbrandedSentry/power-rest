@@ -1,0 +1,48 @@
+<div class="body">
+  <div class="input">
+    <span>accounts</span>
+    <select [(ngModel)]="id" (ngModelChange)="getAccount()" required>
+      <option disabled selected value="acc.id">Select your option</option>
+      <option *ngFor="let acc of rAccounts" [value]="acc.id">
+        <span>{{acc.first_name}} {{acc.last_name}}</span>
+      </option>
+    </select>
+  </div>
+
+  <div class="main">
+    <div class="row">
+      <div class="input">
+        <span>first name</span>
+        <input type="text" [(ngModel)]="firstName">
+      </div>
+      <div class="input">
+        <span>middle name</span>
+        <input type="text" [(ngModel)]="middleName">
+      </div>
+      <div class="input">
+        <span>last name</span>
+        <input type="text" [(ngModel)]="lastName">
+      </div>
+    </div>
+    <div class="row">
+      <div class="input">
+        <span>address</span>
+        <input type="text" [(ngModel)]="address" id="add">
+      </div>
+      <div class="input">
+        <span>contact number</span>
+        <input type="text" [(ngModel)]="contactNumber">
+      </div>
+    </div>
+    <div class="input">
+      <span>total premium</span>
+      <input type="tel" [(ngModel)]="totalPremium">
+    </div>
+  </div>
+
+  <div class="message">
+    <span>{{message}}</span>
+  </div>
+
+  <button (click)="update()">update</button>
+</div>

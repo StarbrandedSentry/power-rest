@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +14,7 @@ import { AccountComponent } from './account/account.component';
 import { AccountInfoComponent } from './account-info/account-info.component';
 import { ProductInfoComponent } from './product-info/product-info.component';
 import { RewardInfoComponent } from './reward-info/reward-info.component';
+import { environment } from 'src/environments/environment.prod';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,8 @@ import { RewardInfoComponent } from './reward-info/reward-info.component';
     BrowserModule, HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig), AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

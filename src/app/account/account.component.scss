@@ -1,33 +1,53 @@
-mat-card {
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    background-size: cover;
-    margin-bottom: 0em;
-    height: 20vh;
-    background-color: #eb2250;
-  
-    img {
-      background-size: cover;
+// mat-card {
+//   display: grid;
+//   justify-content: center;
+//   align-items: center;
+//   background-size: cover;
+//   margin-bottom: 0em;
+//   height: 20vh;
+//   background-color: #eb2250;
+
+//   img {
+//     background-size: cover;
+//   }
+// }
+
+// .desc {
+//   padding-left: 9vw;
+//   padding-right: 9vw;
+//   text-align: justify;
+//   word-spacing: 6px;
+
+//   em {
+//     font-style: italic;
+//   }
+
+//   p {
+//     font-size: 17px;
+//   }
+
+//   .p-title {
+//     font-weight: 500;
+//     font-size: 25px;
+//     margin-bottom: 0em;
+//   }
+
+//   li {
+//     margin: 0.5em 0;
+//   }
+// }
+
+option {
+  span {
+    &.title {
+      margin-right: 1rem;
+      font-weight: 600;
     }
+
   }
 
-  .desc
-  {
-      padding-left:9vw;
-      padding-right: 9vw;
-      text-align: justify;  
-      word-spacing: 6px;
-    em{
-      font-style: italic;
-    }
-    p{font-size: 17px;}
-    .p-title {
-      font-weight: 500;
-      font-size: 25px;
-      margin-bottom: 0em;
-    }
-    li{
-      margin: 0.5em 0;
-    }
-  }
+}
+
+button {
+  margin-top: 1rem;
+}
