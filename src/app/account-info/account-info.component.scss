@@ -3,7 +3,11 @@
     right:-13em;
     width: 130vw;
 }
-
+mat-card {
+    background-color: #eb2250;
+    display: flex;
+    justify-content: center;
+}
 mat-expansion-panel {
     margin-bottom: 10px;
 
@@ -13,7 +17,7 @@ mat-expansion-panel {
     }
 
     .images {
-        height: 430px;
+        height: 570px;
         width: 1110px;
     }
 }
