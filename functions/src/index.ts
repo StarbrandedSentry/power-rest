@@ -1,5 +1,6 @@
 import * as functions from 'firebase-functions';
 import * as admin from 'firebase-admin';
+const cors = require('cors');
 // import * as firebaseHelper from 'firebase-functions-helper';
 const firebaseHelper = require('firebase-functions-helper');
 import * as express from 'express';
@@ -25,20 +26,23 @@ export const powerrest = functions.https.onRequest(main);
 
 //TODO rewards
 app.post('/rewards', async (req, res) => {
-  try {
-    const contact: any = {
-      company_name: req.body['company_name'],
-      description: req.body['description'],
-      need_to_know: req.body['need_to_know'],
+  cors(express.request, express.response, async () => {
+    try {
+      const contact: any = {
+        company_name: req.body['company_name'],
+        description: req.body['description'],
+        need_to_know: req.body['need_to_know'],
+      }
+
+      const newDoc = await firebaseHelper.firestore
+        .createNewDocument(db, 'rewards', contact);
+
+      res.status(201).send(`Created a new reward: ${newDoc.id}`);
+    } catch (error) {
+      res.status(400).send(`Unable to resolve request.`)
     }
+  });
 
-    const newDoc = await firebaseHelper.firestore
-      .createNewDocument(db, 'rewards', contact);
-
-    res.status(201).send(`Created a new reward: ${newDoc.id}`);
-  } catch (error) {
-    res.status(400).send(`Unable to resolve request.`)
-  }
 })
 app.get('/rewards/:rewardId', (req, res) => { //TODO
   firebaseHelper.firestore
@@ -90,6 +94,7 @@ app.get('/accounts', (req, res) => { //TODO
     .then((data: any) => res.status(200).send(data))
     .catch((error: any) => res.status(400).send(`Cannot get contacts: ${error}`));
 })
+
 app.patch('/accounts/:accountId', async (req, res) => {
   const updatedDoc = await firebaseHelper.firestore
     .updateDocument(db, 'accounts', req.params.accountId, req.body); //TODO
