@@ -35,7 +35,7 @@ mat-card {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  background-color: #eb2250;
+  background-color: rgb(235, 34, 80);
   color: #fff;
   border-radius: 40px;
   margin-left: 25px;
@@ -96,7 +96,7 @@ mat-card {
 }
 
 .text:hover {
-  background-image: linear-gradient(to top, rgba(255, 0, 0, 0), rgba(255, 0, 0, 1));
+  background-image: linear-gradient(to top, rgba(255, 0, 0, 0.20), rgba(235, 34, 80, 1));
 
   p#title {
     opacity: 0;
